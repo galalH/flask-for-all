@@ -9,7 +9,7 @@ production:
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
-    - fem install dpl
+    - gem install dpl
     - dpl --provider=heroku --app=mediumflasktest --api-key=$HEROKU_SECRET_KEY
-    only:
+  only:
       - master
