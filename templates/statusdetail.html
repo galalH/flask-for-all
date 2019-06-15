@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+  <section class="hero is-small is-light is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+        Status Details
+        </h1>
+        <h2 class="subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container">
+      <h2>&nbsp;</h2>
+      <h3 class="subtitle">Details for: {{data.caseno}}</h3>
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Collection Centre</th>
+          <th>Collection Date</th>
+          <th>Individual ID</th>
+        </tr>
+
+        {% for detail in data.details %}
+        <tr>
+          <td>{{detail.type}}</td>
+           <td>{{detail.amount}}</td>
+          <td>{{detail.collectioncenter}}</td>
+          <td>{{detail.collectiondate}}</td>
+          <td>{{detail.individualid}}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  </section>
+  
+{% endblock  %}

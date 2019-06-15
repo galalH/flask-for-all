@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+  <section class="hero is-small is-light is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+        Status Check
+        </h1>
+        <h2 class="subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container">
+      <h2>&nbsp;</h2>
+      <h3 class="subtitle">Status List</h3>
+      <table>
+      <tr>
+        <th>Case No</th>
+        <th># of Assistance</th>
+      </tr>
+      {% for status in statuses %}
+      <tr>
+        <td><a href="status/{{status.caseno}}">{{status.caseno}}</a> </td>
+        <td>{{status['details']|length}}</td>
+
+      </tr>
+
+      {% endfor %}
+       </table>
+    </div>
+  </section>
+  
+{% endblock  %}

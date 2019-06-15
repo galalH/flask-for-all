@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CBI | UNHCR</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bulma_unhcr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+      body {
+          padding-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'includes/_topnavbar.html' %}
+    
+    {% block content %}
+    {% endblock %}
+    
+    {% include 'includes/_footer.html' %}
+
+    <script type="text/javascript">
+    (function() {
+    var burger = document.querySelector('.burger');
+    var nav = document.querySelector('#'+burger.dataset.target);
+    
+    burger.addEventListener('click', function(){
+    burger.classList.toggle('is-active');
+    nav.classList.toggle('is-active');
+    });
+    })();
+    </script>
+  </body>
+</html>
