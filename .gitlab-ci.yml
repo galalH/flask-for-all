@@ -10,6 +10,6 @@ production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app=mediumflasktest --api-key=$HEROKU_SECRET_KEY
+    - dpl --provider=heroku --app=flask-cbi-git --api-key=$HEROKU_SECRET_KEY
     only:
       - master
