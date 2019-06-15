@@ -12,4 +12,4 @@ production:
     - gem install dpl
     - dpl --provider=heroku --app=flask-cbi-git --api-key=$HEROKU_SECRET_KEY
     only:
-      - master
+    - master
