@@ -1,0 +1,15 @@
+before scripts:
+  script:
+    - apt-get update -qy
+    - apt-get install -y python-dev python-pip
+    - pip install -r requirements.txt
+
+production:
+  type: deploy
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - fem install dpl
+    - dpl --provider=heroku --app=mediumflasktest --api-key=$HEROKU_SECRET_KEY
+    only:
+      - master
