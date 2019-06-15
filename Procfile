@@ -1,1 +1,1 @@
-web: gunicorn flask-cbi-github.wsgi:application --log-file -
+web: gunicorn deploy:app
