@@ -16,23 +16,40 @@
   <div class="container">
     <div class="columns">
       <div class="column is-one-third">
-        The button will route to <b> /status </b> and populate available caseno
+        <h2 class="subtitle">The button</h2>
+
+        The button will route to <b> /status </b> and populate available caseno that are encrypted <b>crypt_caseno</b>
         <br>
         <a href="/status" class="button is-large is-link">Check Status</a>
       </div>
       <div class="column is-two-third">
-        The form
-        <form>
+        <h2 class="subtitle">The form</h2>
+        
+        <div>Returns result for the cases 001-01C0001, 001-01C0002, 001-01C0003, 001-01C0004
+          <br>
+          The input value is checked using bcrypt.check_password_hash and the true value is return in the next page.
+
+        </div>
+
+        <form action="http://localhost:5000/status_check" method="post">
           <div class="field">
-            <label class="label">Case </label>
+            <label class="label">Case No</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Case Number">
+              <input class="input" type="text" value="001-01C0001" placeholder="001-01C0001" name="caseno">
             </div>
           </div>
-          <div class="field">
+<!--           <div class="field">
             <label class="label">DOB</label>
             <div class="control">
-              <input class="date" type="email" placeholder="Date of Birth">
+              <input class="date" type="dob" placeholder="Date of Birth">
+            </div>
+          </div> -->
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-danger">Cancel</button>
             </div>
           </div>
         </form>

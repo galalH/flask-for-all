@@ -24,7 +24,7 @@
       </tr>
       {% for status in statuses %}
       <tr>
-        <td><a href="status/{{status.caseno}}">{{status.caseno}}</a> </td>
+        <td>{{status.crypt_caseno}} </td>
         <td>{{status['details']|length}}</td>
 
       </tr>
