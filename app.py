@@ -33,7 +33,7 @@ def statusCheck():
         caseno = request.form['caseno']
         try:
             data = [v for v in Statuses if bcrypt.check_password_hash(v['crypt_caseno'], caseno)][0]
-            return render_template('statusdetail.html', data=data)
+            return render_template('statusdetail.html', data=data, caseno=caseno)
         except IndexError:
             return "Nothing to display"
 
